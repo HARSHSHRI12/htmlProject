@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+     body { 
+         font-family: Arial, sans-serif;  
+        background-color: #f4f4f4; 
+         margin: 0;  
+        display: flex;  
+        justify-content: center; 
+        align-items: center;  
+       height: 100vh;  
+    }
+
+    .login-container {
+      background-color: #fff; 
+      padding: 20px; 
+      border-radius: 50px; 
+		 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    .login-container h2 {
+      text-align: center;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-group input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container"> 
+  <h2>Login</h2>
+  <form name="myform" method="post"  onsubmit="validation()">
+  <form class="login-form">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" >
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" >
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Login" >
+    </div>
+  </form>
+</div>
+<script>
+function validation(){
+var Username=document.myform.name.value;
+var password=document.myform.password.value;
+if(Username==null || Username==" "){
+alert("Username Can't be blank!!");
+return true;
+}
+if(password.length< 8){
+alert("Password must be atleast 8 character long");
+return false;
+}
+}
+</script>
+</body>
+</html>
+
